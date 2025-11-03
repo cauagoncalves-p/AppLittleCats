@@ -1,12 +1,12 @@
 import React from "react"
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native"
-import { createDrawerNavigator } from "@react-navigation/drawer"
-import Splash from "./Splash";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import  Icon  from "react-native-vector-icons/FontAwesome";
-import { TextInput } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 import CardPetsCategoria from "./CardPets/CardPetsCategoria";
-const Drawer = createDrawerNavigator();
+import CardPets from "./CardPets/CardPets";
+import { useNavigation } from "@react-navigation/native";
 export default () =>{
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <View style={{flexDirection:"row", padding:20, alignItems:"center", justifyContent:"space-between"}}>
@@ -15,7 +15,7 @@ export default () =>{
                     <Text style={styles.txtTilleSub}>Little friends </Text>
                 </View>
                 <View style={{borderWidth:1, borderColor:"#ccc", paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:10, borderRadius:50}}>
-                    <TouchableOpacity><Icon name="navicon" size={30}/></TouchableOpacity>
+                    <TouchableOpacity  onPress={() => navigation.openDrawer()}><Icon name="navicon" size={30}/></TouchableOpacity>
                 </View>
             </View>
 
@@ -40,6 +40,12 @@ export default () =>{
                 <CardPetsCategoria nome={"Birds"} image={require("../assets/ImageMain/icons-birds.jpg")}/>
                 <CardPetsCategoria nome={"Fish"} image={require("../assets/ImageMain/icons-fish.jpg")}/>
             </View>
+
+            <View style={{padding:20, flexDirection:"row"}}>
+                <CardPets text="Brook" image={require("../assets/ImageCardsPets/dog1.jpg")} txtdistanca="1.2 km away"/>
+            </View>
+            
+            <Button onPress={() => navigation.navigate('ExplorePets')}> clique</Button>
         </View>
     )
 }

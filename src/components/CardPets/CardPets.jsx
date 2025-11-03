@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-export default ({ text, image }) => {
+import LinearGradient from 'react-native-linear-gradient';
+const CardPets =  ({ text, image,txtdistanca, stylesProps,colorGradiente ,colorGradiente1}) => {
   const [colorHeart, setColorHeart] = useState(false);
   return (
-    <View style={styles.container}>
-      <View style={styles.colorView}>
+      <LinearGradient style={[styles.gradient, stylesProps]}  colors={[colorGradiente || '#fee0ca', colorGradiente1 || '#ffffff']}  start={{ x: 0, y: 1 }}
+      end={{ x: 1, y: 0 }} locations={[0,0.7]}>
         <View style={styles.viewIcon}>
           <Icon
             style={styles.icon}
@@ -17,51 +17,49 @@ export default ({ text, image }) => {
           />
         </View>
 
-        <View style={{flexDirection:"row"}}>
-          <View style={{width:100}}>
-            <Text style={styles.TxtName}>Brook</Text>
-            <Text>1.2 km away</Text>
+        <View style={{flexDirection:"row", position:"relative"}}>
+          <View style={{width:100, gap:10}}>
+            <Text style={styles.TxtName}>{text}</Text>
+            <Text>{txtdistanca}</Text>
           </View>
 
-          <View>
+          <View style={{position: "absolute", right:-20, top:-100}}>
             <Image
-              source={require('../../assets/ImageCardsPets/dog1.jpg')} style={styles.sizeImg}
+              source={image} style={styles.sizeImg}
             />
           </View>
         </View>
-      </View>
-    </View>
+    </LinearGradient>
+
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  colorView: {
-    backgroundColor: '#fee0ca',
+  gradient: {
     height: 250,
-    width: 250,
+    width: 300,
     borderTopLeftRadius: 30,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
+    borderTopRightRadius:30,
     padding: 20,
+    marginBottom:20
   },
   viewIcon: {
-    backgroundColor: '#e4cfc2',
     borderRadius: '50%',
     width: 50,
     padding: 10,
     alignItems: 'center',
+    backgroundColor:'rgba(0, 0, 0, 0.05)'
   },
   TxtName: {
     fontFamily: 'robotocondensedbold',
     fontSize: 30,
   },
   sizeImg:{
-    height:100,
-    width:100,
+    width:200,
+    height:310
   }
 });
+
+export default CardPets;
