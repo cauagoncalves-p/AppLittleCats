@@ -19,12 +19,16 @@ const navigation = useNavigation();
             </View>
 
             <View style={styles.CardPetsviewMain}>
-                <CardPets stylesProps={{width:180, height:200}} colorGradiente="black" colorGradiente1="white"/>
-                <CardPets stylesProps={{width:180, height:200}}/>
-                <CardPets stylesProps={{width:180, height:200}}/>
-                <CardPets stylesProps={{width:180, height:200}}/>
-                <CardPets stylesProps={{width:180, height:200}}/>
-                <CardPets stylesProps={{width:180, height:200}}/>
+                <CardPets stylesProps={{width:190, height:200}} stylesIMG={{width:170, height:220}} stylesText={{fontSize:25}} text="Tom" stylesViewIMG={{right:-50, top:-80}} image={require("../assets/ImageCardsPets/gato1.jpg")} colorGradiente="#e4d3ff" colorGradiente1="white"/>
+                <CardPets stylesProps={{width:190, height:200}} stylesIMG={{width:190, height:250}} stylesText={{fontSize:25}} text="Milke" stylesViewIMG={{right:-70, top:-100}} image={require("../assets/ImageCardsPets/dog2.jpg")} colorGradiente="#ffdce4" colorGradiente1="white"/>
+                <CardPets stylesProps={{width:190, height:200}} stylesIMG={{width:180, height:220}} stylesText={{fontSize:25}} text="Helena" stylesViewIMG={{right:-50, top:-70}} image={require("../assets/ImageCardsPets/coelho1.jpg")} colorGradiente="#d7f5c4" colorGradiente1="white"/>
+                <CardPets stylesProps={{width:190, height:200}} stylesIMG={{width:180, height:250}} stylesText={{fontSize:25}} text="Sara & Deni" stylesViewIMG={{right:-40, top:-110}} image={require("../assets/ImageCardsPets/gato2.jpg")} colorGradiente="#d0defb" colorGradiente1="white"/>
+                <CardPets stylesProps={{width:190, height:200}} stylesIMG={{width:160, height:250}} stylesText={{fontSize:25}} text="Shasa" stylesViewIMG={{right:-50, top:-90}} image={require("../assets/ImageCardsPets/dog1.jpg")} colorGradiente="#fee0ca" colorGradiente1="white"/>
+                <CardPets stylesProps={{width:190, height:200}} stylesIMG={{width:170, height:220}} stylesText={{fontSize:25}} text="Joyce" stylesViewIMG={{right:-50, top:-80}} image={require("../assets/ImageCardsPets/gato1.jpg")} colorGradiente="#d6fbfc" colorGradiente1="white"/>
+            </View>
+
+            <View>
+                
             </View>
         </View> 
     )

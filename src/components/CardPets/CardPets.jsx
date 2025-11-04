@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
-const CardPets =  ({ text, image,txtdistanca, stylesProps,colorGradiente ,colorGradiente1}) => {
+const CardPets =  ({ text, image,txtdistanca, stylesProps, stylesIMG, stylesViewIMG,colorGradiente ,colorGradiente1, stylesText}) => {
   const [colorHeart, setColorHeart] = useState(false);
   return (
       <LinearGradient style={[styles.gradient, stylesProps]}  colors={[colorGradiente || '#fee0ca', colorGradiente1 || '#ffffff']}  start={{ x: 0, y: 1 }}
@@ -19,13 +19,13 @@ const CardPets =  ({ text, image,txtdistanca, stylesProps,colorGradiente ,colorG
 
         <View style={{flexDirection:"row", position:"relative"}}>
           <View style={{width:100, gap:10}}>
-            <Text style={styles.TxtName}>{text}</Text>
+            <Text style={[styles.TxtName, stylesText]}>{text}</Text>
             <Text>{txtdistanca}</Text>
           </View>
 
-          <View style={{position: "absolute", right:-20, top:-100}}>
+          <View style={[styles.viewIMG, stylesViewIMG]}>
             <Image
-              source={image} style={styles.sizeImg}
+              source={image} style={[styles.sizeImg, stylesIMG]}
             />
           </View>
         </View>
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
     width: 50,
     padding: 10,
     alignItems: 'center',
-    backgroundColor:'rgba(0, 0, 0, 0.05)'
+    backgroundColor:'rgba(0, 0, 0, 0.05)',
+    zIndex:1
   },
   TxtName: {
     fontFamily: 'robotocondensedbold',
@@ -59,6 +60,11 @@ const styles = StyleSheet.create({
   sizeImg:{
     width:200,
     height:310
+  },
+  viewIMG:{
+    position: "absolute", 
+    right:-20, 
+    top:-100
   }
 });
 

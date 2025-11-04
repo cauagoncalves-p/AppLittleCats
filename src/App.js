@@ -12,8 +12,8 @@ export default props => {
     <SafeAreaView style={{flex:1}}>
       <NavigationContainer>
         <Drawer.Navigator screenOptions={{headerShown:false}}>
-          <Drawer.Screen name="ExplorePets" component={ExplorePets}/>
           <Drawer.Screen name="Home" component={Home}/>
+          <Drawer.Screen name="ExplorePets" component={ExplorePets}/>
         </Drawer.Navigator>
       </NavigationContainer>
     </SafeAreaView>
