@@ -17,7 +17,7 @@ export default props => {
           <Text style={styles.titulo}>Cafeteria do TH</Text>
         </View>
 
-        <DrawerItemList {...props} />
+      <DrawerItemList {...props} />
       </DrawerContentScrollView>
       <TouchableOpacity
         style={styles.button}
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingVertical: 40,
-    backgroundColor: '#FFF5EE', // cor suave de fundo
+    backgroundColor: '#FFF5EE', 
+    marginBottom:20
   },
   image: {
     width: 90,
@@ -53,6 +54,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     paddingVertical: 10,
     borderRadius: 10,
+    padding:40
   },
   buttonText: {
     color: '#fff',

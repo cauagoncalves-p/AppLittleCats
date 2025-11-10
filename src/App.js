@@ -4,17 +4,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import CardPets from './components/CardPets/CardPets'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ExplorePets from './components/ExplorePets';
-
+import Login from './components/Login';
+import Cadastro from './components/Cadastro';
+import DrawerNav from './navegacao/DrawerNav';
 
 export default props => {
   const Drawer = createDrawerNavigator();
   return (
     <SafeAreaView style={{flex:1}}>
       <NavigationContainer>
-        <Drawer.Navigator screenOptions={{headerShown:false}}>
-          <Drawer.Screen name="Home" component={Home}/>
-          <Drawer.Screen name="ExplorePets" component={ExplorePets}/>
-        </Drawer.Navigator>
+            <DrawerNav/>
       </NavigationContainer>
     </SafeAreaView>
   );
