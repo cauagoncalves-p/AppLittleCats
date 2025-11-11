@@ -4,6 +4,7 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
+import Button from '../components/Button/Button';
 
 export default props => {
   return (
@@ -19,12 +20,7 @@ export default props => {
 
       <DrawerItemList {...props} />
       </DrawerContentScrollView>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => alert('Botão clicado!')}
-      >
-        <Text style={styles.buttonText}>Entrar</Text>
-      </TouchableOpacity>
+      <Button text="Entrar" rota="Login"/>
     </View>
   );
 };

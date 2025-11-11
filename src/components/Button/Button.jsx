@@ -1,9 +1,11 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
 import { TouchableOpacity } from "react-native";
-export default ({text}) =>{
+import { useNavigation } from "@react-navigation/native";
+export default ({text, style, rota}) =>{
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity style={styles.button}><Text style={styles.buttonTxT}>{text}</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate(rota)} style={[styles.button, style]}><Text style={styles.buttonTxT}>{text}</Text></TouchableOpacity>
     )
 }
 
@@ -12,7 +14,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#f69929",
         padding:10,
         borderRadius:20,
-        width:"95%"
+        width:"95%",
     },
     buttonTxT:{
         color:"white",

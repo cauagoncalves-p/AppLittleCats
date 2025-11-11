@@ -37,6 +37,7 @@ const navigation = useNavigation();
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        backgroundColor:"white"
     },
     txtTille:{
         fontSize:25

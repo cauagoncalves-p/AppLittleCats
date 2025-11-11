@@ -1,14 +1,15 @@
-import React, { useState } from "react"
+import React, { use, useState } from "react"
 import { StyleSheet, Text, TouchableOpacity, View, Image} from "react-native"
 import { TextInput } from "react-native-paper"
 import { SafeAreaView } from "react-native-safe-area-context"
-
+import { useNavigation } from "@react-navigation/native"
 export default () =>{
+    const navigation = useNavigation();
     const [password, setPassword] = useState(false)
     return (
        <SafeAreaView style={styles.container}>
            <View style={{alignItems:"center", gap:10, marginTop:"20%"}}>
-                <Text style={{fontSize:30, color:"#3461fd", fontWeight:"600"}}>Sign In</Text>
+                <Text style={{fontSize:30, color:"#f69929", fontWeight:"600"}}>Sign In</Text>
                 <Text>Uma comida para você adotar seu melhor parceiro</Text>
            </View>
 
@@ -43,10 +44,10 @@ export default () =>{
            </View>
 
            <View style={{alignItems:"center"}}>
-                <TouchableOpacity style={{backgroundColor:"#3461fd", width:"100%", padding:15, borderRadius:10}}><Text style={{textAlign:"center", color:"white", fontSize:20}}>Login</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{backgroundColor:"#f69929", width:"100%", padding:15, borderRadius:10}}><Text style={{textAlign:"center", color:"white", fontSize:20}}>Login</Text></TouchableOpacity>
                 <View style={{flexDirection:"row", gap:10, alignSelf:"flex-start", marginTop:10}}>
                     <Text>Don't hava a account?</Text>
-                    <Text style={{color:"#3461fd"}}>Sign Up</Text>
+                    <Text onPress={() => navigation.navigate('Cadastro')} style={{color:"#3461fd"}}>Sign Up</Text>
                 </View>
            </View>
        </SafeAreaView>

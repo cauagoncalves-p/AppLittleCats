@@ -5,6 +5,7 @@ import { Button, TextInput } from "react-native-paper";
 import CardPetsCategoria from "./CardPets/CardPetsCategoria";
 import CardPets from "./CardPets/CardPets";
 import { useNavigation } from "@react-navigation/native";
+import BottomNav from "../navegacao/BottomNav";
 export default () =>{
     const navigation = useNavigation();
     return (
@@ -44,8 +45,6 @@ export default () =>{
             <View style={{padding:20, flexDirection:"row"}}>
                 <CardPets text="Brook" image={require("../assets/ImageCardsPets/dog1.jpg")} txtdistanca="1.2 km away"/>
             </View>
-            
-            <Button onPress={() => navigation.navigate('ExplorePets')}> clique</Button>
         </View>
     )
 }
@@ -53,6 +52,7 @@ export default () =>{
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        backgroundColor:"white"
     },
     txtTille:{
         fontSize:25
